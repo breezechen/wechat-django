@@ -20,7 +20,7 @@ class Session(WeChatModel):
     user = m.ForeignKey(
         WeChatUser, on_delete=m.CASCADE, related_name="sessions", null=False)
     type = m.PositiveSmallIntegerField()
-    auth = JSONField(default={})
+    auth = JSONField(default=dict)
 
     created_at = m.DateTimeField(_("created at"), auto_now_add=True)
     updated_at = m.DateTimeField(_("updated at"), auto_now=True)
